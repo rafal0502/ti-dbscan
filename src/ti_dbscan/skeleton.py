@@ -21,8 +21,8 @@ import logging
 
 from ti_dbscan import __version__
 
-__author__ = "Rafal Chojnacki"
-__copyright__ = "Rafal Chojnacki"
+__author__ = "rafal0502"
+__copyright__ = "rafal0502"
 __license__ = "mit"
 
 _logger = logging.getLogger(__name__)
