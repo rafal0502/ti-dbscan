@@ -148,4 +148,8 @@ expandCluster(P, NeighborPts, C, eps, MinPts)
 regionQuery(P, eps)
   return all points within P's eps-neighborhood(including P)
 ```
-[source](https://cse.buffalo.edu/~jing/cse601/fa13/materials/clustering_density.pdf)
+### Sources
+
+[clustering density ~ jing](https://cse.buffalo.edu/~jing/cse601/fa13/materials/clustering_density.pdf)
+
+[scikit learn dbscan implementation](https://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html)
