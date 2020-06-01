@@ -3,10 +3,10 @@ ti-dbscan
 =========
 
 
-Implementation of TI-DBSCAN algorithm
+# Implementation of TI-DBSCAN algorithm
 
 
-Description
+# Description
 ===========
 Proposition of using triangle inequality
 property (TI) to reduce the number of
@@ -19,7 +19,7 @@ Major challenges in DBSCAN
 * the use of such indices helps in the case of low dimensional data only
 
 
-Overview:
+# Overview:
 =========
 DBSCAN refers to unsupervised learning methods that
 identify distinctive groups/cluster in data, based
@@ -30,7 +30,7 @@ Density-Based Spatial Clustering of Applications with Noise
 can discover clusters of different shapes and sizes from
 a large amount of data, which containing noise and outliers.
 
-The DBSCAN algorithm uses two parameters:
+# The DBSCAN algorithm uses two parameters:
 * eps:  a distance measure that is used to locate the points
         in the neighborhood of any point
 * minPts: minimum number of points (threshold) clustered
@@ -48,14 +48,14 @@ explore two concept called Density Connectivity and Reachability
                  ticular cluster
 
 
-Types of points after the DBSCAN clustering is complete:
+# Types of points after the DBSCAN clustering is complete:
 * core - point that has at least m points within distance n from itself
 * border - point that has at least one core point at a distance n
 * noise - point that is neither a core nor a border.
           It has less than m points within distance n from itself.
 
 
-Algoritmic steps for DBSCAN clustering:
+# Algoritmic steps for DBSCAN clustering:
 * the algorithm proceeds by arbitrarily picking up a point
   in the dataset (until all points have been visited)
 * if there are at least 'minPoint' points within a radius
@@ -91,7 +91,7 @@ Algoritmic steps for DBSCAN clustering:
 
 
 
-Note
+# Note
 ====
 
 Clustering analysis is an unsupervised learning method that
@@ -123,19 +123,4 @@ that, DBSCAN produces more reasonable results that k-means across a
 variety of different distributions. Image below:
 
 [Image]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-This project has been set up using PyScaffold 3.2.3. For details and usage
-information on PyScaffold see https://pyscaffold.org/.
+![DbscanvsKmeans](dbclustering-kmeans.png)
