@@ -1,12 +1,11 @@
+# Ploting results
+import matplotlib.pyplot as plt
 import numpy as np
-
-from sklearn.cluster import DBSCAN
+from dbscan import basicDBSCAN
 from sklearn import metrics
+from sklearn.cluster import DBSCAN
 from sklearn.datasets import make_blobs
 from sklearn.preprocessing import StandardScaler
-
-
-from dbscan import basicDBSCAN
 
 # Create three gaussian blobs to use as our clustering data.
 # First tests on dummy data
@@ -60,5 +59,10 @@ else:
     print(f"Fail, {num_disagree} labels don't match.")
 
 
-# Ploting results
-import matplotlib.pyplot as plt
+# Black removed and is used for noise instead
+
+unique_my_labels = set(my_labels)
+print(f"List of unique my lables {unique_my_labels}")
+
+unique_sklearn_labels = set(sklearn_labels)
+print(f"List of unique sklearn lables {unique_my_labels}")
