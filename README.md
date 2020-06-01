@@ -1,13 +1,8 @@
-=========
-ti-dbscan
-=========
-
-
 # Implementation of TI-DBSCAN algorithm
 
 
-# Description
-===========
+## Description
+
 Proposition of using triangle inequality
 property (TI) to reduce the number of
 candidates for being a member of Eps-neighboorhood
@@ -19,8 +14,8 @@ Major challenges in DBSCAN
 * the use of such indices helps in the case of low dimensional data only
 
 
-# Overview:
-=========
+## Overview:
+
 DBSCAN refers to unsupervised learning methods that
 identify distinctive groups/cluster in data, based
 on the idea that a cluster in data space is a contiguous
@@ -30,7 +25,7 @@ Density-Based Spatial Clustering of Applications with Noise
 can discover clusters of different shapes and sizes from
 a large amount of data, which containing noise and outliers.
 
-# The DBSCAN algorithm uses two parameters:
+## The DBSCAN algorithm uses two parameters:
 * eps:  a distance measure that is used to locate the points
         in the neighborhood of any point
 * minPts: minimum number of points (threshold) clustered
@@ -48,14 +43,14 @@ explore two concept called Density Connectivity and Reachability
                  ticular cluster
 
 
-# Types of points after the DBSCAN clustering is complete:
+## Types of points after the DBSCAN clustering is complete:
 * core - point that has at least m points within distance n from itself
 * border - point that has at least one core point at a distance n
 * noise - point that is neither a core nor a border.
           It has less than m points within distance n from itself.
 
 
-# Algoritmic steps for DBSCAN clustering:
+## Algoritmic steps for DBSCAN clustering:
 * the algorithm proceeds by arbitrarily picking up a point
   in the dataset (until all points have been visited)
 * if there are at least 'minPoint' points within a radius
@@ -91,8 +86,7 @@ explore two concept called Density Connectivity and Reachability
 
 
 
-# Note
-====
+## Notes
 
 Clustering analysis is an unsupervised learning method that
 separates the data points into several specific bunches of
@@ -122,5 +116,4 @@ guidance for what amount of distance is considered "close". Thanks to
 that, DBSCAN produces more reasonable results that k-means across a
 variety of different distributions. Image below:
 
-[Image]
 ![DbscanvsKmeans](dbclustering-kmeans.png)
