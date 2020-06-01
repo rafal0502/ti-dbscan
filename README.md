@@ -99,7 +99,10 @@ first we calculate similarities and then we use it to cluster
 the data points into groups or batches.
 
 
-Density-Based clustering algorithm (DBSCAN) vs K-means clustering
+#### Density-Based clustering algorithm (DBSCAN) vs K-means clustering
+
+![DbscanvsKmeans](dbclustering-kmeans.png)
+
 
 K-means clustering may cluster loosely related observations together,
 even if the observations are scattered far away in the space.
@@ -116,4 +119,3 @@ guidance for what amount of distance is considered "close". Thanks to
 that, DBSCAN produces more reasonable results that k-means across a
 variety of different distributions. Image below:
 
-![DbscanvsKmeans](dbclustering-kmeans.png)
