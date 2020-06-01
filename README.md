@@ -119,3 +119,19 @@ guidance for what amount of distance is considered "close". Thanks to
 that, DBSCAN produces more reasonable results that k-means across a
 variety of different distributions. Image below:
 
+
+### For simplified process of implementation I started from pseudocode and basic version of DBSCAN
+
+```
+DBSCAN(D, eps, MinPts)
+ C = 0
+ for each unvisited point P in dataset D
+  mark P as visited
+  NeighborPts = regionQuery(P, eps)
+  if sizeof(NeighborPts) < MinPts
+    mark P as NOISE
+  else
+    C = next cluster
+    expandCluster(P, NeighborPts, C, eps, MinPts)
+```
+[source!](https://cse.buffalo.edu/~jing/cse601/fa13/materials/clustering_density.pdf)
