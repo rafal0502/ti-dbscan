@@ -1,7 +1,7 @@
 import numpy
 
 
-def DBSCAN(D, eps, MinPts):
+def basicDBSCAN(D, eps, MinPts):
     """
        Clustering dataset 'D' using DBSCAN algorithm.
        This implementation takes a dataset 'D' (a list
@@ -61,13 +61,13 @@ def expandCluster(D, labels, X, NeighborPts, C, eps, MinPts):
     """
        Expanding cluster beased on seed point X with label C
 
-       This function searches through the dataset to find all 
+       This function searches through the dataset to find all
        points that belong to this new cluster. When this function
        returns, cluster 'C' is complete
 
     Args:
         D ([type]): List of vectors
-                    labels ([type]): List storing the cluster labels 
+                    labels ([type]): List storing the cluster labels
                     for all dataset points
         X ([type]): Index of the seed point for new cluster
                     NeighborPts ([type]): All of the neighbors of 'X'
@@ -125,7 +125,7 @@ def expandCluster(D, labels, X, NeighborPts, C, eps, MinPts):
 def markRegion(D, X, eps):
     """
        Find all points in dataset 'D' within distance 'eps' of point 'X'
-       
+
        This function calculates the distance between a point X and every
        other point in the dataset, and then returns only those points,
        which are within threshold distance 'eps'.
