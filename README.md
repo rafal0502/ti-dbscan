@@ -120,7 +120,7 @@ that, DBSCAN produces more reasonable results that k-means across a
 variety of different distributions. Image below:
 
 
-### For simplified process of implementation I started from pseudocode and basic version of DBSCAN
+#### For simplified process of implementation I started from pseudocode and basic version of DBSCAN
 
 ```
 DBSCAN(D, eps, MinPts)
@@ -133,5 +133,19 @@ DBSCAN(D, eps, MinPts)
   else
     C = next cluster
     expandCluster(P, NeighborPts, C, eps, MinPts)
+
+expandCluster(P, NeighborPts, C, eps, MinPts)
+  add P to cluster C
+  for each point P' in NeighborPts
+    if P' is not visited
+      mark P' as visited
+      NeighborPts' = regionQuery(P',eps)
+      if sizeof(NeighborPts') >= MinPts
+        NeighborPts = NeighborPts joined with NeighborPts'
+    if P' is not yet member of any cluster
+      add P' to cluster C
+
+regionQuery(P, eps)
+  return all points within P's eps-neighborhood(including P)
 ```
-[source!](https://cse.buffalo.edu/~jing/cse601/fa13/materials/clustering_density.pdf)
+[source](https://cse.buffalo.edu/~jing/cse601/fa13/materials/clustering_density.pdf)
