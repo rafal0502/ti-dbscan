@@ -1,8 +1,8 @@
 # Ploting results
 import matplotlib.pyplot as plt
 import numpy as np
-from dbscan import basicDBSCAN
 from classdbscan import CLASSDBSCAN
+from dbscan import basicDBSCAN
 from sklearn import metrics
 from sklearn.cluster import DBSCAN
 from sklearn.datasets import make_blobs

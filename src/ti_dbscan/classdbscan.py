@@ -1,5 +1,6 @@
-import numpy
 from typing import List
+
+import numpy
 
 
 class CLASSDBSCAN:
