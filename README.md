@@ -153,8 +153,7 @@ regionQuery(P, eps)
 [clustering density ~ jing](https://cse.buffalo.edu/~jing/cse601/fa13/materials/clustering_density.pdf)
 
 
-```
-@article{scikit-learn,
+\cite{@article{scikit-learn,
  title={Scikit-learn: Machine Learning in {P}ython},
  author={Pedregosa, F. and Varoquaux, G. and Gramfort, A. and Michel, V.
          and Thirion, B. and Grisel, O. and Blondel, M. and Prettenhofer, P.
@@ -164,5 +163,5 @@ regionQuery(P, eps)
  volume={12},
  pages={2825--2830},
  year={2011}
-}
-```
+}}
+
