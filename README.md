@@ -154,4 +154,3 @@ regionQuery(P, eps)
 
 
 [Scikit-learn: Machine Learning in {P}ython](https://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html#sphx-glr-auto-examples-cluster-plot-dbscan-py)
-

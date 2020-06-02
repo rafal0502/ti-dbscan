@@ -3,7 +3,7 @@ from typing import List
 import numpy
 
 
-class CLASSDBSCAN:
+class classDBSCAN:
     def __init__(self, min_points, epsilon):
         self.min_points = min_points
         self.epsilon = epsilon

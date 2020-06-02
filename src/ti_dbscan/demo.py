@@ -1,7 +1,8 @@
 # Ploting results
 import matplotlib.pyplot as plt
 import numpy as np
-from classdbscan import CLASSDBSCAN
+import seaborn as sns
+from classdbscan import classDBSCAN
 from dbscan import basicDBSCAN
 from sklearn import metrics
 from sklearn.cluster import DBSCAN
@@ -36,114 +37,42 @@ for i in range(0, len(sklearn_labels)):
 # Number of clusters in labels, ignoring noise if present.
 sklearn_n_clusters_ = len(set(sklearn_labels)) - (1 if -1 in sklearn_labels else 0)
 sklearn_n_noise_ = list(sklearn_labels).count(-1)
-print(
-    f"Sklearn number of cluster: {sklearn_n_clusters_}, number of noises: {sklearn_n_noise_}"
-)
-
 
 print("Sklearn part of visualization...")
-
-
 unique_sklearn_labels = set(sklearn_labels)
-print(f"List of unique sklearn lables {unique_sklearn_labels}")
 
-
-# Black removed and is used for noise instead.
-unique_sklearn_labels = set(sklearn_labels)
-colors = [
-    plt.cm.Spectral(each) for each in np.linspace(0, 1, len(unique_sklearn_labels))
-]
-
-
-for k, col in zip(unique_sklearn_labels, colors):
-    if k == -1:
-        # Black used for noise.
-        col = [0, 0, 0, 1]
-    sklearn_class_member_mask = sklearn_labels == k
-
-    xy = X[sklearn_class_member_mask & sklearn_core_samples_mask]
-    plt.plot(
-        xy[:, 0],
-        xy[:, 1],
-        "o",
-        markerfacecolor=tuple(col),
-        markeredgecolor="k",
-        markersize=14,
-    )
-
-    xy = X[sklearn_class_member_mask & ~sklearn_core_samples_mask]
-    plt.plot(
-        xy[:, 0],
-        xy[:, 1],
-        "o",
-        markerfacecolor=tuple(col),
-        markeredgecolor="k",
-        markersize=6,
-    )
-
-plt.title(f"Estimated number of sklearn clusters {sklearn_n_clusters_}")
+fig = plt.figure(figsize=(10, 10))
+sns.scatterplot(X[:, 0], X[:, 1], hue=["cluster-{}".format(x) for x in sklearn_labels])
+plt.title(f"Estimated number of sklearn clusters: {sklearn_n_clusters_}")
 plt.show()
 
 
 # My implementation of DBSCAN
 #
 # Run my DBSCAN implementation.
-print("Running my implementation...")
-my_labels = basicDBSCAN(X, eps=0.3, MinPts=10)
-my_core_samples_mask = np.zeros_like(my_labels, dtype=bool)
-# print(my_labels)
+print("Running basicDBSCAN implementation...")
+basic_labels = basicDBSCAN(X, eps=0.3, MinPts=10)
+basic_core_samples_mask = np.zeros_like(basic_labels, dtype=bool)
+
 
 # Number of clusters in labels, ignoring noise if present.
-my_n_clusters_ = len(set(my_labels)) - (1 if -1 in my_labels else 0)
-my_n_noise_ = list(my_labels).count(-1)
-print(f"My number of cluster: {my_n_clusters_}, number of noises: {my_n_noise_}")
-
+basic_n_clusters_ = len(set(basic_labels)) - (1 if -1 in basic_labels else 0)
+basic_n_noise_ = list(basic_labels).count(-1)
 
 print("basicDBSCAN part of visualization...")
 
 
 # Black removed and is used for noise instead
-unique_my_labels = set(my_labels)
-print(f"List of unique my lables {unique_my_labels}")
+unique_basic_labels = set(basic_labels)
 
-
-my_colors = [plt.cm.Spectral(each) for each in np.linspace(0, 1, len(unique_my_labels))]
-
-
-for k, col in zip(unique_sklearn_labels, my_colors):
-    if k == -1:
-        col = [0, 0, 0, 1]
-
-    my_class_member_mask = my_labels == k
-    xy = X[my_class_member_mask & my_core_samples_mask]
-
-    plt.plot(
-        xy[:, 0],
-        xy[:, 1],
-        "o",
-        markerfacecolor=tuple(col),
-        markeredgecolor="k",
-        markersize=14,
-    )
-
-    xy = X[my_class_member_mask & ~my_core_samples_mask]
-
-    plt.plot(
-        xy[:, 0],
-        xy[:, 1],
-        "o",
-        markerfacecolor=tuple(col),
-        markeredgecolor="k",
-        markersize=6,
-    )
-
-plt.title(f"Estimated number of clusters by basicDBSCAN: {my_n_clusters_}")
+fig = plt.figure(figsize=(10, 10))
+sns.scatterplot(X[:, 0], X[:, 1], hue=["cluster-{}".format(x) for x in basic_labels])
+plt.title(f"Estimated number of basicDBSCAN clusters: {basic_n_clusters_}")
 plt.show()
 
-
 # Run my CLASSDBSCAN implementation.
-print("Runing classdbscan implementation...")
-classdb = CLASSDBSCAN(min_points=10, epsilon=0.3)
+print("Runing classDBSCAN implementation...")
+classdb = classDBSCAN(min_points=10, epsilon=0.3)
 class_labels = classdb.fit(X)
 class_core_samples_mask = np.zeros_like(class_labels, dtype=bool)
 
@@ -151,50 +80,17 @@ class_core_samples_mask = np.zeros_like(class_labels, dtype=bool)
 # Number of clusters in labels, ignoring noise if present.
 class_n_clusters_ = len(set(class_labels)) - (1 if -1 in class_labels else 0)
 class_n_noise_ = list(class_labels).count(-1)
-print(f"My number of cluster: {class_n_clusters_}, number of noises: {class_n_noise_}")
 
 
-print("CLASSDBSCAN part of visualization...")
+print("classDBSCAN part of visualization...")
 
 
 # Black removed and is used for noise instead
 unique_class_labels = set(class_labels)
-print(f"List of unique my lables {unique_class_labels}")
 
-
-class_colors = [
-    plt.cm.Spectral(each) for each in np.linspace(0, 1, len(unique_class_labels))
-]
-
-
-for k, col in zip(unique_class_labels, class_colors):
-    if k == -1:
-        col = [0, 0, 0, 1]
-
-    class_member_mask = class_labels == k
-    xy = X[class_member_mask & class_core_samples_mask]
-
-    plt.plot(
-        xy[:, 0],
-        xy[:, 1],
-        "o",
-        markerfacecolor=tuple(col),
-        markeredgecolor="k",
-        markersize=14,
-    )
-
-    xy = X[class_member_mask & ~class_core_samples_mask]
-
-    plt.plot(
-        xy[:, 0],
-        xy[:, 1],
-        "o",
-        markerfacecolor=tuple(col),
-        markeredgecolor="k",
-        markersize=6,
-    )
-
-plt.title(f"Estimated number of clusters by CLASSDBSCAN: {class_n_clusters_}")
+fig = plt.figure(figsize=(10, 10))
+sns.scatterplot(X[:, 0], X[:, 1], hue=["cluster-{}".format(x) for x in class_labels])
+plt.title(f"Estimated number of clusters by classDBSCAN: {class_n_clusters_}")
 plt.show()
 
 
@@ -206,8 +102,8 @@ num_disagree = 0
 # Go through each label and make sure they match (print the labels if they
 # don't)
 for i in range(0, len(sklearn_labels)):
-    if not sklearn_labels[i] == my_labels[i]:
-        print(f"Scikit learn: {sklearn_labels[i]} mine: {my_labels[i]}")
+    if not sklearn_labels[i] == basic_labels[i]:
+        print(f"Scikit learn: {sklearn_labels[i]} mine: {basic_labels[i]}")
         num_disagree += 1
 
 if num_disagree == 0:
