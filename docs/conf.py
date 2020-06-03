@@ -8,10 +8,10 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import os
-import sys
 import inspect
+import os
 import shutil
+import sys
 
 __location__ = os.path.join(
     os.getcwd(), os.path.dirname(inspect.getfile(inspect.currentframe()))
@@ -239,7 +239,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-    ("index", "user_guide.tex", u"ti-dbscan Documentation", u"rafal0502", "manual"),
+    ("index", "user_guide.tex", u"ti-dbscan Documentation", u"rafal0502", "manual")
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
