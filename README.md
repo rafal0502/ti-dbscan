@@ -154,3 +154,15 @@ regionQuery(P, eps)
 
 
 [Scikit-learn: Machine Learning in {P}ython](https://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html#sphx-glr-auto-examples-cluster-plot-dbscan-py)
+
+
+[Foundations of Intelligent Systems: 19th International Symposium, ISMIS 2011, Warsaw, Poland, June 28-30, 2011, Proceedings](https://books.google.pl/books?id=RfuqCAAAQBAJ&pg=PA289&lpg=PA289&dq=triangle+dbscan+algorithm&source=bl&ots=-MQS78mWrM&sig=ACfU3U0OdjPI1wic9_opoa9mjmOhCySRww&hl=en&sa=X&ved=2ahUKEwiH8p2IvtzpAhXByKQKHWZHDyo4ChDoATACegQIChAB#v=onepage&q=triangle%20dbscan%20algorithm&f=false)
+
+Kryszkiewicz M., Lasek P. (2010) A Neighborhood-Based Clustering by Means of the Triangle
+Inequality. In: Fyfe C., Tino P., Charles D., Garcia-Osorio C., Yin H. (eds) Intelligent Data
+Engineering and Automated Learning – IDEAL 2010. IDEAL 2010
+
+
+Kryszkiewicz M., Lasek P. (2010) TI-DBSCAN: Clustering with DBSCAN by Means of the
+Triangle Inequality. In: Szczuka M., Kryszkiewicz M., Ramanna S., Jensen R., Hu Q. (eds) Rough
+Sets and Current Trends in Computing. RSCTC 2010
