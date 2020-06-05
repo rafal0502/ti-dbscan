@@ -8,6 +8,7 @@ from sklearn import metrics
 from sklearn.cluster import DBSCAN
 from sklearn.datasets import make_blobs
 from sklearn.preprocessing import StandardScaler
+import time
 
 # Create three gaussian blobs to use as our clustering data.
 # First tests on dummy data
@@ -18,12 +19,15 @@ X, labels_true = make_blobs(
     n_samples=750, centers=centers, cluster_std=0.4, random_state=0
 )
 
+
 X = StandardScaler().fit_transform(X)
 
 # Scikit-learn implementation of DBSCAN
 #
 print("Runing scikit-learn implementation...")
+start_time = time.clock()
 db = DBSCAN(eps=0.3, min_samples=10).fit(X)
+print(f"Execution scikit-learn implementation: {time.clock() - start_time} seconds")
 sklearn_core_samples_mask = np.zeros_like(db.labels_, dtype=bool)
 sklearn_labels = db.labels_
 
