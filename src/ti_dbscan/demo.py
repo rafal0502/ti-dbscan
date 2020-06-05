@@ -1,4 +1,6 @@
 # Ploting results
+import time
+from datetime import datetime
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
@@ -8,7 +10,6 @@ from sklearn import metrics
 from sklearn.cluster import DBSCAN
 from sklearn.datasets import make_blobs
 from sklearn.preprocessing import StandardScaler
-import time
 
 # Create three gaussian blobs to use as our clustering data.
 # First tests on dummy data
@@ -25,9 +26,11 @@ X = StandardScaler().fit_transform(X)
 # Scikit-learn implementation of DBSCAN
 #
 print("Runing scikit-learn implementation...")
-start_time = time.clock()
+scikit_start_time = time.monotonic()
 db = DBSCAN(eps=0.3, min_samples=10).fit(X)
-print(f"Execution scikit-learn implementation: {time.clock() - start_time} seconds")
+scikit_end_time = time.monotonic()
+scikit_learn_time = scikit_end_time - scikit_start_time
+print(f"Execution scikit-learn implementation: {scikit_learn_time} seconds")
 sklearn_core_samples_mask = np.zeros_like(db.labels_, dtype=bool)
 sklearn_labels = db.labels_
 
@@ -55,7 +58,11 @@ plt.show()
 #
 # Run my DBSCAN implementation.
 print("Running basicDBSCAN implementation...")
+basic_start_time = time.monotonic()
 basic_labels = basicDBSCAN(X, eps=0.3, MinPts=10)
+basic_end_time = time.monotonic()
+basicDBSCAN_time = basic_end_time - basic_start_time
+print(f"Execution time basicDBSCAN implementation: {basicDBSCAN_time} seconds")
 basic_core_samples_mask = np.zeros_like(basic_labels, dtype=bool)
 
 
@@ -76,7 +83,11 @@ plt.show()
 
 # Run my CLASSDBSCAN implementation.
 print("Runing classDBSCAN implementation...")
+class_start_time = time.monotonic()
 classdb = classDBSCAN(min_points=10, epsilon=0.3)
+class_end_time = time.monotonic()
+classDBSCAN_time = class_end_time - class_start_time
+print(f"Execution time classDBSCAN implementation: {classDBSCAN_time} seconds")
 class_labels = classdb.fit(X)
 class_core_samples_mask = np.zeros_like(class_labels, dtype=bool)
 
