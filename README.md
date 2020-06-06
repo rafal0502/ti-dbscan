@@ -1,5 +1,18 @@
 # Implementation of TI-DBSCAN algorithm
 
+## Introduction
+
+Clustering is a technique that groups similar objects such that objects
+in the same group are more similar to each other than the objects in the
+other groups. The group of similar objects is called a **Cluster**
+
+There are 5 popular clustering algorithms that data scientists need to know:
+* K-Means Clustering 
+* Hierarchical Clustering
+* Density-Based Spatial Clustering of Applications with Noise (DBSCAN)
+* Mean-Shift Clustering
+* Expectation-Maximization (EM) Clustering using Guassian Mixture Models (GMM)
+
 
 ## Description
 
@@ -12,12 +25,6 @@ Major challenges in DBSCAN
 * efficient calculation of eps-neightborhood for each of points
 * dbscan uses the R*-tree index
 * the use of such indices helps in the case of low dimensional data only
-
-## Introduction
-
-Clustering is a technique that groups similar objects such that objects 
-in the same group are more similar to each other than the objects in the 
-other groups. The group of similar objects is called a *Cluster*
 
 ## Overview:
 
