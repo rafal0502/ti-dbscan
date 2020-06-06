@@ -15,12 +15,13 @@ There are 5 popular clustering algorithms that data scientists need to know:
 
 ## Distance Metric
 > Given elements a,b,c in as set, a distance metric is defined as a function with the following properties:
+```
 > * Non-negativity
 > $$d(a,b) \geq  0
 
 > * Indiscernibility
 > $$d(a,b) = 0 \iff a=b
-
+```
 
 ## Description
 
