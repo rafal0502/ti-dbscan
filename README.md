@@ -13,6 +13,11 @@ Major challenges in DBSCAN
 * dbscan uses the R*-tree index
 * the use of such indices helps in the case of low dimensional data only
 
+## Introduction
+
+Clustering is a technique that groups similar objects such that objects 
+in the same group are more similar to each other than the objects in the 
+other groups. The group of similar objects is called a *Cluster*
 
 ## Overview:
 
