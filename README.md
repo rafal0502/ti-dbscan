@@ -16,8 +16,9 @@ There are 5 popular clustering algorithms that data scientists need to know:
 ## Distance Metric
 > Given elements a,b,c in as set, a distance metric is defined as a function with the following properties:
 > * Non-negativity
-> $$d(a,b) \geq
-> * Indiscernibility 
+> $$d(a,b) \geq  0
+
+> * Indiscernibility
 > $$d(a,b) = 0 \iff a=b
 
 
@@ -172,7 +173,7 @@ regionQuery(P, eps)
 [clustering density ~ jing](https://cse.buffalo.edu/~jing/cse601/fa13/materials/clustering_density.pdf)
 
 
-[Scikit-learn: Machine Learning in {P}ython](https://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html#sphx-glr-auto-examples-cluster-plot-dbscan-py)
+[Scikit-learn: Machine Learning in Python](https://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html#sphx-glr-auto-examples-cluster-plot-dbscan-py)
 
 
 [Foundations of Intelligent Systems: 19th International Symposium, ISMIS 2011, Warsaw, Poland, June 28-30, 2011, Proceedings](https://books.google.pl/books?id=RfuqCAAAQBAJ&pg=PA289&lpg=PA289&dq=triangle+dbscan+algorithm&source=bl&ots=-MQS78mWrM&sig=ACfU3U0OdjPI1wic9_opoa9mjmOhCySRww&hl=en&sa=X&ved=2ahUKEwiH8p2IvtzpAhXByKQKHWZHDyo4ChDoATACegQIChAB#v=onepage&q=triangle%20dbscan%20algorithm&f=false)
