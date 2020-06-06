@@ -78,10 +78,17 @@ class classDBSCAN:
         :return: List of 2d points that are in the epsilon neighborhood of this_point.
         """
         neighbors = []
+        # The markings are from the book Foundations of Intelligent Systems: 19th International
+        # Symposium, ISMIS 2011, Warsaw, Poland, June 28-30, 2011, Proceedings
+        # data[this_point] p
+        # data[point] q
+        # We are calculaing distance between q and p and comparing to epsilon
 
         for point in range(0, len(data)):
+            print(data[point])
+            if (
+                numpy.linalg.norm(data[this_point] - data[point]) < self.epsilon
+            ):  # vector norm calculating - Euclidean norm: numpy.linalg.norm(data[this_point] - data[point])
 
-            if numpy.linalg.norm(data[this_point] - data[point]) < self.epsilon:
                 neighbors.append(point)
-
         return neighbors
