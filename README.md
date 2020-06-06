@@ -178,7 +178,9 @@ of the 7th International Conference](https://books.google.pl/books?id=vbSqCAAAQB
 
 
 
-[TI-DBSCAN: Clustering with DBSCAN by means of the triangle inequality](https://primo-48tuw.hosted.exlibrisgroup.com/permalink/f/1um23a9/TN_scopus2-s2.0-79956257766)
+[TI-DBSCAN: Clustering with DBSCAN by means of the triangle inequality, In: Szczuka M., Kryszkiewicz M., Ramanna S., Jensen R., Hu Q. (eds) Rough
+Sets and Current Trends in Computing. RSCTC 2010]
+(https://primo-48tuw.hosted.exlibrisgroup.com/permalink/f/1um23a9/TN_scopus2-s2.0-79956257766)
 
 
 Kryszkiewicz M., Lasek P. (2010) A Neighborhood-Based Clustering by Means of the Triangle
