@@ -14,12 +14,10 @@ There are 5 popular clustering algorithms that data scientists need to know:
 * Expectation-Maximization (EM) Clustering using Guassian Mixture Models (GMM)
 
 ## Distance Metric
-Given elements a,b,c in as set, a distance metric is defined as a function with the following properties:
-* Non-negativity - d(a,b) >- 0
-* Indiscernibility - d(a,b) = 0
+> Given elements a,b,c in as set, a distance metric is defined as a function with the following properties:
+> * Non-negativity - $$d(a,b) \geq 0
+> * Indiscernibility - $$d(a,b) = 0 \iff a=b
 
-![f4]
-[f4]: http://chart.apis.google.com/chart?cht=tx&chl=m_0c^2
 
 ## Description
 
