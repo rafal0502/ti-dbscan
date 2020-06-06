@@ -72,16 +72,41 @@ class classDBSCAN:
             i += 1
 
     def region_query(self, data, this_point) -> List[List]:
-        """Queries for list of 2d points that are in the epsilon neighborhood of this_point.
+        """
+        Eps neighborhood of a point p=data[this_point] is defined
+        as the set of point q=data[point] in dataset 'data' that 
+        are distant from p by no more than epsilon
+        A point p is defined as a core point if its
+        eps-neighborhood contains at last min_points.
+
+
+        Theorem: let r by any point and data be a set of point ordered
+        in a non-decreasing way with respect to the their distances to r.
+        Let p by any point in data, q be a point
+        following point p in data such that distance(g,r)-distance(p,r) > epsilon
+        and g 
+
+        Queries for list of 2d points that are in the epsilon neighborhood of this_point.
         :param data: List of 2d points.
         :param this_point: Point who's region will be queried
         :return: List of 2d points that are in the epsilon neighborhood of this_point.
         """
+        # The markings are from the book Foundations of Intelligent Systems: 19th International
+        # Symposium, ISMIS 2011, Warsaw, Poland, June 28-30, 2011, Proceedings
+        # data[this_point] p
+        # data[point] q
+        # We are calculaing distance between q and p and comparing to epsilon
+
+        r = [0, 0]
         neighbors = []
-
         for point in range(0, len(data)):
-
-            if numpy.linalg.norm(data[this_point] - data[point]) < self.epsilon:
-                neighbors.append(point)
+            p = data[this_point]
+            q = data[point]
+            if (
+                numpy.linalg.norm(p - q) < self.epsilon
+            ):  # vector norm calculating - Euclidean norm
+                neighbors.append(
+                    point
+                )  # numpy.linalg.norm(data[this_point] - data[point])
 
         return neighbors

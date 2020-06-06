@@ -171,16 +171,9 @@ regionQuery(P, eps)
 
 [Foundations of Intelligent Systems: 19th International Symposium, ISMIS 2011, Warsaw, Poland, June 28-30, 2011, Proceedings](https://books.google.pl/books?id=RfuqCAAAQBAJ&pg=PA289&lpg=PA289&dq=triangle+dbscan+algorithm&source=bl&ots=-MQS78mWrM&sig=ACfU3U0OdjPI1wic9_opoa9mjmOhCySRww&hl=en&sa=X&ved=2ahUKEwiH8p2IvtzpAhXByKQKHWZHDyo4ChDoATACegQIChAB#v=onepage&q=triangle%20dbscan%20algorithm&f=false)
 
-[Kryszkiewicz M., Lasek P. (2010) TI-DBSCAN: Clustering with DBSCAN by Means of the
-Triangle Inequality. In: Szczuka M., Kryszkiewicz M., Ramanna S., Jensen R., Hu Q. (eds) Rough
-Sets and Current Trends in Computing, Proceceedings
-of the 7th International Conference](https://books.google.pl/books?id=vbSqCAAAQBAJ&pg=PA69&lpg=PA69&dq=Kryszkiewicz,+M.;+Lasek,+P.+TI-DBSCAN:+Clustering+with+DBSCAN+by+Means+of+the+Triangle+Inequality.+In+Rough+Sets+and+Current+Trends+in+Computing,+Proceedings+of+the+7th+International+Conference&source=bl&ots=SboA8Vqunc&sig=ACfU3U3mfNAe_J7ccPNZHiIaBEksZlW8Kg&hl=en&sa=X&ved=2ahUKEwif4ID3nuHpAhWKCOwKHXSMBwIQ6AEwAnoECAoQAQ#v=onepage&q=Kryszkiewicz%2C%20M.%3B%20Lasek%2C%20P.%20TI-DBSCAN%3A%20Clustering%20with%20DBSCAN%20by%20Means%20of%20the%20Triangle%20Inequality.%20In%20Rough%20Sets%20and%20Current%20Trends%20in%20Computing%2C%20Proceedings%20of%20the%207th%20International%20Conference&f=false)
+[Kryszkiewicz M., Lasek P. (2010) TI-DBSCAN: Clustering with DBSCAN by Means of the Triangle Inequality. In: Szczuka M., Kryszkiewicz M., Ramanna S., Jensen R., Hu Q. (eds) Rough Sets and Current Trends in Computing, Proceceedings of the 7th International Conference](https://books.google.pl/books?id=vbSqCAAAQBAJ&pg=PA69&lpg=PA69&dq=Kryszkiewicz,+M.;+Lasek,+P.+TI-DBSCAN:+Clustering+with+DBSCAN+by+Means+of+the+Triangle+Inequality.+In+Rough+Sets+and+Current+Trends+in+Computing,+Proceedings+of+the+7th+International+Conference&source=bl&ots=SboA8Vqunc&sig=ACfU3U3mfNAe_J7ccPNZHiIaBEksZlW8Kg&hl=en&sa=X&ved=2ahUKEwif4ID3nuHpAhWKCOwKHXSMBwIQ6AEwAnoECAoQAQ#v=onepage&q=Kryszkiewicz%2C%20M.%3B%20Lasek%2C%20P.%20TI-DBSCAN%3A%20Clustering%20with%20DBSCAN%20by%20Means%20of%20the%20Triangle%20Inequality.%20In%20Rough%20Sets%20and%20Current%20Trends%20in%20Computing%2C%20Proceedings%20of%20the%207th%20International%20Conference&f=false)
 
-
-
-[TI-DBSCAN: Clustering with DBSCAN by means of the triangle inequality, In: Szczuka M., Kryszkiewicz M., Ramanna S., Jensen R., Hu Q. (eds) Rough
-Sets and Current Trends in Computing. RSCTC 2010]
-(https://primo-48tuw.hosted.exlibrisgroup.com/permalink/f/1um23a9/TN_scopus2-s2.0-79956257766)
+[TI-DBSCAN: Clustering with DBSCAN by means of the triangle inequality, In: Szczuka M., Kryszkiewicz M., Ramanna S., Jensen R., Hu Q. (eds) Rough Sets and Current Trends in Computing. RSCTC 2010](https://primo-48tuw.hosted.exlibrisgroup.com/permalink/f/1um23a9/TN_scopus2-s2.0-79956257766)
 
 
 Kryszkiewicz M., Lasek P. (2010) A Neighborhood-Based Clustering by Means of the Triangle
