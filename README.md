@@ -7,12 +7,19 @@ in the same group are more similar to each other than the objects in the
 other groups. The group of similar objects is called a **Cluster**
 
 There are 5 popular clustering algorithms that data scientists need to know:
-* K-Means Clustering 
+* K-Means Clustering
 * Hierarchical Clustering
 * Density-Based Spatial Clustering of Applications with Noise (DBSCAN)
 * Mean-Shift Clustering
 * Expectation-Maximization (EM) Clustering using Guassian Mixture Models (GMM)
 
+## Distance Metric
+Given elements a,b,c in as set, a distance metric is defined as a function with the following properties:
+* Non-negativity - d(a,b) >- 0
+* Indiscernibility - d(a,b) = 0
+
+![f4]
+[f4]: http://chart.apis.google.com/chart?cht=tx&chl=m_0c^2
 
 ## Description
 
