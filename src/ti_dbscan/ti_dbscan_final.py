@@ -202,11 +202,11 @@ def TI_DBScan(D, eps, MinPts, metadata=None):
     try:
         D = [class_point(
             D[indice], pnt_ref, metadata=metadata[indice])
-            for indice in xrange(len(D))]
+            for indice in range(len(D))]
     except TypeError:
         D = [class_point(
             D[indice], pnt_ref)
-            for indice in xrange(len(D))]
+            for indice in range(len(D))]
 
         # sort all points in D non-decreasingly w.r.t. field dist;
         #D = sorted(D, key=operator.attrgetter('dist'))
@@ -253,6 +253,6 @@ if __name__ == "__main__":
     result = TI_DBScan(set_of_points, 2, 2)
 
     for element in result:
-        print element.ClusterId
-        print element.Coords
-        print ""
+        print (element.ClusterId)
+        print (element.Coords)
+        print ("")
