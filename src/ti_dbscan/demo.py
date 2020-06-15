@@ -11,6 +11,7 @@ from sklearn import metrics
 from sklearn.cluster import DBSCAN
 from sklearn.datasets import make_blobs
 from sklearn.preprocessing import StandardScaler
+from ti_dbscan_final import TI_DBScan
 
 # Create three gaussian blobs to use as our clustering data.
 # First tests on dummy data
@@ -110,8 +111,57 @@ plt.title(f"Estimated number of clusters by classDBSCAN: {class_n_clusters_}")
 plt.show()
 
 
+
+
+
+# My implementation of TIDBSCAN
+#
+# Run my TIDBSCAN implementation.
+print("Running TIDBSCAN implementation...")
+tidbscan_start_time = time.monotonic()
+tidbscan_labels = []
+#tidbscan_labels =TI_DBScan(X, eps=0.3, MinPts=10)
+result =TI_DBScan(X, eps=0.3, MinPts=10)
+tidbscan_end_time = time.monotonic()
+for element in result:
+    tidbscan_labels.append(element.ClusterId)   
+
+
+#TIDBscan uses -1 to for NOISE, and starts cluster labeling at 0.
+#I started numbering at 1, so increment the tidbscan cluster numbers by 1.
+for i in range(0, len(tidbscan_labels)):
+    if not tidbscan_labels[i] == -1:
+        tidbscan_labels[i] += 1
+
+         
+TIDBSCAN_time = tidbscan_end_time - tidbscan_start_time
+print(f"Execution time TIDBSCAN implementation: {TIDBSCAN_time} seconds")
+tidbscan_core_samples_mask = np.zeros_like(tidbscan_labels, dtype=bool)
+
+
+
+# Number of clusters in labels, ignoring noise if present.
+tidbscan_n_clusters_ = len(set(tidbscan_labels)) - (1 if -1 in tidbscan_labels else 0)
+tidbscan_n_noise_ = list(tidbscan_labels).count(-1)
+
+print("TIDBSCAN part of visualization...")
+
+
+# Black removed and is used for noise instead
+unique_basic_labels = set(tidbscan_labels)
+#print(unique_basic_labels)
+
+fig = plt.figure(figsize=(10, 10))
+sns.scatterplot(X[:, 0], X[:, 1], hue=["cluster-{}".format(x) for x in tidbscan_labels])
+plt.title(f"Estimated number of TIDBSCAN clusters: {tidbscan_n_clusters_}")
+plt.show()
+
+
+
+
+
 ###############################################################################
-# Checking we get the same results?
+print("Checking we get the same results? sklearn vs basic")
 
 num_disagree = 0
 
@@ -119,7 +169,25 @@ num_disagree = 0
 # don't)
 for i in range(0, len(sklearn_labels)):
     if not sklearn_labels[i] == basic_labels[i]:
-        print(f"Scikit learn: {sklearn_labels[i]} mine: {basic_labels[i]}")
+        print(f"Scikit learn: {sklearn_labels[i]} basic: {basic_labels[i]}")
+        num_disagree += 1
+
+if num_disagree == 0:
+    print("All labels match!")
+else:
+    print(f"Fail, {num_disagree} labels don't match.")
+    
+
+
+################################################################################
+print("Checking we get the same results? sklearn vs tidbscan")
+num_disagree = 0
+
+# Go through each label and make sure they match (print the labels if they
+# don't)
+for i in range(0, len(sklearn_labels)):
+    if not sklearn_labels[i] == tidbscan_labels[i]:
+        print(f"Scikit learn: {sklearn_labels[i]} tidbscan: {tidbscan_labels[i]}")
         num_disagree += 1
 
 if num_disagree == 0:

@@ -33,16 +33,6 @@ def TI_Forward_Neighborhood(D, p, Eps):
     return seeds
 
 
-
-    # The newly calculated list is traversed
-    for q in points_list:
-        if q.dist > forwardThreshold:
-            break
-        if Distance(q.Coords, p.Coords) <= Eps:
-            seeds.append(q)
-    return seeds
-
-
 def TI_Backward_Neighborhood(D, pto, Eps):
     seeds = []
     backwardThreshold = pto.dist - Eps
@@ -73,7 +63,7 @@ def TI_Neighborhood(D, p, Eps):
 def TI_ExpandCluster(D, D_prim,
                      p, ClId, Eps, MinPts):
     """D is increasingly ordered with respect to the
-    distances from the reference pointa"""
+    distances from the reference point"""
 
     # The set of points around point "p" is explored. Note that
     # seeds is a set or list of points.
@@ -83,7 +73,7 @@ def TI_ExpandCluster(D, D_prim,
     # "p" can be noise or an edge point
     if p.NeighborsNo < MinPts:
         # It is initially declared as noise
-        p.ClusterId = "NOISE"
+        p.ClusterId = -1  # "NOISE"
         # You go through each point of the set of seeds
         for q in seeds:
             q.Border.append(p)
@@ -213,8 +203,8 @@ def TI_DBScan(D, eps, MinPts, metadata=None):
     D = sorted(D, key=operator.attrgetter('dist'))
 
     # ClusterId = label of first cluster;
-    i = 1
-    ClusterId = "%s" % (i)
+    i = 0
+    ClusterId = i #"%s" % (
 
     # for each point p in the ordered set D starting from
     # the first point until last point in D do
@@ -228,7 +218,7 @@ def TI_DBScan(D, eps, MinPts, metadata=None):
                             p, ClusterId, eps, MinPts):
             # ClusterId = NextId(ClusterId)
             i += 1
-            ClusterId = "%s" % (i)
+            ClusterId = i #"%s" % (i)
             # endif
         # endfor
 
