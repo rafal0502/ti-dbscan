@@ -201,7 +201,7 @@ conda create -n tidbscan_env
 pip install -r requirements.txt
 ```
 
-******** Generated data sample used for testing **********
+##### Generated data sample used for testing
 
 * Running sklearn dbscan implementation, my personal implementation of dbscan and tidbscan with exectution time
 ```
@@ -215,7 +215,7 @@ python demo.py
 | TI_DBScan                  | 0.75238199    |
 
 
-******* Iris dataset ********
+##### Iris dataset
 The Iris Dataset contains four features (length and width of sepals and petals) of 50 samples of three species of 
 Iris (Iris setosa, Iris virginica and Iris versicolor). These measures were used to create a linear discriminant model to classify the species.
 
