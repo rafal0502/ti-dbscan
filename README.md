@@ -214,11 +214,22 @@ minimal values in the domains of all coordinates;
 working dir: ti-dbscan/src/ti_dbscan
 conda create -n tidbscan_env
 pip install -r requirements.txt
+
+
+Generated data sample used for testing
 ```
 * Running sklearn dbscan implementation, my personal implementation of dbscan and tidbscan with exectution time
 ```
 python demo.py
 ```
+
+| Algorithm implementation   | Time          |
+| -------------------------- |:-------------:|
+| scikit-learn               | 0.00465798    |
+| basicDBSCAN                | 3.18534058    |
+| TI_DBScan                  | 0.75238199    |
+
+
 
 
 
