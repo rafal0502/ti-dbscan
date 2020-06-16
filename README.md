@@ -144,7 +144,7 @@ regionQuery(P, eps)
   return all points within P's eps-neighborhood(including P)
 ```
 
-### Disadvantages of DBSCAN
+#### Disadvantages of DBSCAN
 
 DBSCAN may not be able to discover clusters of different density
 The most time-consuming
@@ -152,6 +152,9 @@ operation in DBSCAN is the calculation of a neighborhood for each data point. In
 order to speed up this operation in DBSCAN, it is expected to be supported by spatial
 access methods such as R*-tree. DBSCAN, nevertheless, is not able to
 cluster high dimensional data efficiently.
+
+### TIDBSCAN
+
 
 ##### Using the Triangle Inequality for Efficient Determination of Eps-Neighborhood
 ```
