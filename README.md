@@ -171,10 +171,9 @@ order to speed up this operation in DBSCAN, it is expected to be supported by sp
 access methods such as R*-tree. DBSCAN, nevertheless, is not able to
 cluster high dimensional data efficiently.
 
-Using the Triangle Inequality for Efficient Determination of
-Eps-Neighborhood
+##### Using the Triangle Inequality for Efficient Determination of Eps-Neighborhood
 ```
-(Triangle inequality property). For any three points p, q, r:
+For any three points p, q, r:
 
 distance(p,r) <= distance(p,q) + distance(q,r)
 
@@ -187,6 +186,41 @@ Let D be a set of points. For any two points p, q in D and any point r:
 distance(p,r) - distance(q,r) > Eps  => q ne N(p) & p ne N(q) 
 
 ```
+###### Notation
+```
+* D – the set of points that is subject to clustering;
+* Eps – the radius of the point neighborhood;
+* MinPts – the required minimal number of points MinPts within Eps-neighborhood;
+* r – a reference point assumed to be fixed, e.g. to the point with all coordinates equal to 0 or
+minimal values in the domains of all coordinates;
+* fields of any point p in D:
+  - p.ClusterId – label of a cluster to which p belongs; initially assigned the
+                  UNCLASSIFIED label;
+  - p.dist – the distance of point p to reference point r;-
+  - p.NeighborsNo – the number of neighbors of p already found; initially assigned 1 to
+                    indicate that a point itself belongs to its own Eps-neighborhood;
+  - Border – the information about neighbors of p that turned out non-core points for
+             which it is not clear temporary if they are noise ones or border ones; initially assigned
+             an empty set;
+* D_prim – the result of clustering of D (initially an empty set); 
+``` 
+
+
+
+
+###### User’s manual (how to start/run the project)
+* Environemnt preparation
+```
+working dir: ti-dbscan/src/ti_dbscan
+conda create -n tidbscan_env
+pip install -r requirements.txt
+```
+* Running sklearn dbscan implementation, my personal implementation of dbscan and tidbscan with exectution time
+```
+python demo.py
+```
+
+
 
 #### Sources
 
