@@ -1,6 +1,6 @@
 # Implementation of TI-DBSCAN algorithm
 
-## Introduction
+### Introduction
 
 Clustering is a technique that groups similar objects such that objects
 in the same group are more similar to each other than the objects in the
@@ -15,7 +15,7 @@ There are 5 popular clustering algorithms that data scientists need to know:
 
 
 
-## Description
+### Description
 
 Proposition of using triangle inequality
 property (TI) to reduce the number of
@@ -27,7 +27,7 @@ Major challenges in DBSCAN
 * dbscan uses the R*-tree index
 * the use of such indices helps in the case of low dimensional data only
 
-## Overview:
+### Overview:
 
 DBSCAN refers to unsupervised learning methods that
 identify distinctive groups/cluster in data, based
@@ -38,7 +38,7 @@ Density-Based Spatial Clustering of Applications with Noise
 can discover clusters of different shapes and sizes from
 a large amount of data, which containing noise and outliers.
 
-## The DBSCAN algorithm uses two parameters:
+#### The DBSCAN algorithm uses two parameters:
 * eps:  a distance measure that is used to locate the points
         in the neighborhood of any point
 * minPts: minimum number of points (threshold) clustered
@@ -56,14 +56,14 @@ explore two concept called Density Connectivity and Reachability
                  ticular cluster
 
 
-## Types of points after the DBSCAN clustering is complete:
+#### Types of points after the DBSCAN clustering is complete:
 * core - point that has at least m points within distance n from itself
 * border - point that has at least one core point at a distance n
 * noise - point that is neither a core nor a border.
           It has less than m points within distance n from itself.
 
 
-## Algoritmic steps for DBSCAN clustering:
+#### Algoritmic steps for DBSCAN clustering:
 * the algorithm proceeds by arbitrarily picking up a point
   in the dataset (until all points have been visited)
 * if there are at least 'minPoint' points within a radius
@@ -99,7 +99,7 @@ explore two concept called Density Connectivity and Reachability
 
 
 
-## Notes
+####   Notes
 
 Clustering analysis is an unsupervised learning method that
 separates the data points into several specific bunches of
@@ -161,7 +161,7 @@ expandCluster(P, NeighborPts, C, eps, MinPts)
 regionQuery(P, eps)
   return all points within P's eps-neighborhood(including P)
 ```
-### Sources
+#### Sources
 
 [clustering density ~ jing](https://cse.buffalo.edu/~jing/cse601/fa13/materials/clustering_density.pdf)
 
