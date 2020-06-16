@@ -81,24 +81,6 @@ explore two concept called Density Connectivity and Reachability
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ####   Notes
 
 Clustering analysis is an unsupervised learning method that
@@ -186,7 +168,9 @@ Let D be a set of points. For any two points p, q in D and any point r:
 distance(p,r) - distance(q,r) > Eps  => q ne N(p) & p ne N(q) 
 
 ```
-###### Notation
+
+##### Notation
+
 ```
 * D – the set of points that is subject to clustering;
 * Eps – the radius of the point neighborhood;
@@ -208,16 +192,17 @@ minimal values in the domains of all coordinates;
 
 
 
-###### User’s manual (how to start/run the project)
+### User’s manual (how to start/run the project)
+
 * Environemnt preparation
 ```
 working dir: ti-dbscan/src/ti_dbscan
 conda create -n tidbscan_env
 pip install -r requirements.txt
-
-
-Generated data sample used for testing
 ```
+
+******** Generated data sample used for testing **********
+
 * Running sklearn dbscan implementation, my personal implementation of dbscan and tidbscan with exectution time
 ```
 python demo.py
@@ -230,10 +215,28 @@ python demo.py
 | TI_DBScan                  | 0.75238199    |
 
 
+******* Iris dataset ********
+The Iris Dataset contains four features (length and width of sepals and petals) of 50 samples of three species of 
+Iris (Iris setosa, Iris virginica and Iris versicolor). These measures were used to create a linear discriminant model to classify the species.
+
+```
+python verify.py
+```
+
+| Algorithm implementation   | Time          |
+| -------------------------- |:-------------:|
+| scikit-learn               | 0.00184620    |
+| basicDBSCAN                | 0.19046320    |
+| TI_DBScan                  | 0.03650673    |
 
 
 
-#### Sources
+#### Conclusions 
+Implementation of dbscan based on trianglular inequality is at last 50% faster that dbscan algorithm.
+
+
+
+#### Bibliography
 
 [clustering density ~ jing](https://cse.buffalo.edu/~jing/cse601/fa13/materials/clustering_density.pdf)
 
