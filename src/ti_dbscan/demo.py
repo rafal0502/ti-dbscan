@@ -5,13 +5,12 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
-from classdbscan import classDBSCAN
 from dbscan import basicDBSCAN
 from sklearn import metrics
 from sklearn.cluster import DBSCAN
 from sklearn.datasets import make_blobs
 from sklearn.preprocessing import StandardScaler
-from ti_dbscan_final import TI_DBScan
+from ti_dbscan import TI_DBScan
 
 # Create three gaussian blobs to use as our clustering data.
 # First tests on dummy data
@@ -82,35 +81,6 @@ fig = plt.figure(figsize=(10, 10))
 sns.scatterplot(X[:, 0], X[:, 1], hue=["cluster-{}".format(x) for x in basic_labels])
 plt.title(f"Estimated number of basicDBSCAN clusters: {basic_n_clusters_}")
 plt.show()
-
-# Run my CLASSDBSCAN implementation.
-print("Runing classDBSCAN implementation...")
-class_start_time = time.monotonic()
-classdb = classDBSCAN(min_points=10, epsilon=0.3)
-class_end_time = time.monotonic()
-classDBSCAN_time = class_end_time - class_start_time
-print(f"Execution time classDBSCAN implementation: {classDBSCAN_time} seconds")
-class_labels = classdb.fit(X)
-class_core_samples_mask = np.zeros_like(class_labels, dtype=bool)
-
-
-# Number of clusters in labels, ignoring noise if present.
-class_n_clusters_ = len(set(class_labels)) - (1 if -1 in class_labels else 0)
-class_n_noise_ = list(class_labels).count(-1)
-
-
-print("classDBSCAN part of visualization...")
-
-
-# Black removed and is used for noise instead
-unique_class_labels = set(class_labels)
-
-fig = plt.figure(figsize=(10, 10))
-sns.scatterplot(X[:, 0], X[:, 1], hue=["cluster-{}".format(x) for x in class_labels])
-plt.title(f"Estimated number of clusters by classDBSCAN: {class_n_clusters_}")
-plt.show()
-
-
 
 
 
@@ -187,7 +157,7 @@ num_disagree = 0
 # don't)
 for i in range(0, len(sklearn_labels)):
     if not sklearn_labels[i] == tidbscan_labels[i]:
-        print(f"Scikit learn: {sklearn_labels[i]} tidbscan: {tidbscan_labels[i]}")
+        #print(f"Scikit learn: {sklearn_labels[i]} tidbscan: {tidbscan_labels[i]}")
         num_disagree += 1
 
 if num_disagree == 0:

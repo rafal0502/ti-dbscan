@@ -1,15 +1,6 @@
 import numpy as np
 import operator
 
-# conj_pojnst -> D
-# points_list -> points_list
-# parte_ -> part_
-# D_prim -> D_prim 
-# point -> point
-# class_point -> class_point
-# set_of_points  -> set_of_points
-# result -> result 
-# element -> element
 
 def TI_Forward_Neighborhood(D, p, Eps):
     """ ."""
