@@ -1,6 +1,6 @@
 # Implementation of TI-DBSCAN algorithm
 
-### Introduction
+## Introduction
 
 Clustering is a technique that groups similar objects such that objects
 in the same group are more similar to each other than the objects in the
@@ -161,6 +161,33 @@ expandCluster(P, NeighborPts, C, eps, MinPts)
 regionQuery(P, eps)
   return all points within P's eps-neighborhood(including P)
 ```
+
+### Disadvantages of DBSCAN
+
+DBSCAN may not be able to discover clusters of different density
+The most time-consuming
+operation in DBSCAN is the calculation of a neighborhood for each data point. In
+order to speed up this operation in DBSCAN, it is expected to be supported by spatial
+access methods such as R*-tree. DBSCAN, nevertheless, is not able to
+cluster high dimensional data efficiently.
+
+Using the Triangle Inequality for Efficient Determination of
+Eps-Neighborhood
+```
+(Triangle inequality property). For any three points p, q, r:
+
+distance(p,r) <= distance(p,q) + distance(q,r)
+
+More suitable form:
+
+distance(p,q) >= distance(p,r) - distance(q,r)
+
+Let D be a set of points. For any two points p, q in D and any point r:
+
+distance(p,r) - distance(q,r) > Eps  => q ne N(p) & p ne N(q) 
+
+```
+
 #### Sources
 
 [clustering density ~ jing](https://cse.buffalo.edu/~jing/cse601/fa13/materials/clustering_density.pdf)
@@ -179,3 +206,5 @@ regionQuery(P, eps)
 Kryszkiewicz M., Lasek P. (2010) A Neighborhood-Based Clustering by Means of the Triangle
 Inequality. In: Fyfe C., Tino P., Charles D., Garcia-Osorio C., Yin H. (eds) Intelligent Data
 Engineering and Automated Learning – IDEAL 2010. IDEAL 2010
+
+
